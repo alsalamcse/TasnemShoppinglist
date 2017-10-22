@@ -3,4 +3,13 @@
     <string name="title_activity_main_list">MainListActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="amount">Amount to</string>
+    <string name="Amount">Amount to bye</string>
+    <string name="Unit">units</string>
+    <string name="Save" />
+    <string name="amount2" />
+    <string name="amount3">Amount to bue</string>
+    <string name="Price">Price</string>
+    <string name="Name" />
+    <string name="name">Name</string>
 </resources>

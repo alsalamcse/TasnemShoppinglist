@@ -20,14 +20,21 @@ public class LogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        etEmail=(EditText)findViewById(R.id.etEmail);
+        etPassword=(EditText)findViewById(R.id.etPassword);
+        btnIn=(Button)findViewById(R.id.btnIn);
         btnUp=(Button)findViewById (R.id.btnUp);
-        btnIn.setOnClickListener(new View.OnClickListener() {
+        btnUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getBaseContext(), MainListActivity.class);
-                startActivity(i);
+
+                    Intent i=new Intent(getBaseContext(), SignUp.class);
+                    startActivity(i);
+
+
             }
         });
+
 
 
 

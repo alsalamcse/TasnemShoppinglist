@@ -19,7 +19,11 @@
         <activity
             android:name=".mainlistfragments.MainListActivity"
             android:label="@string/title_activity_main_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddItemActivity"></activity>
+        <activity android:name=".SignUp">
+
+        </activity>
     </application>
 
 </manifest>
