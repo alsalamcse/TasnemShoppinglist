@@ -47,7 +47,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         btnSave=(Button) findViewById(R.id.btnSave);
 
         auth = FirebaseAuth.getInstance();
-//        firebaseUser = auth.getCurrentUser();
+        firebaseUser = auth.getCurrentUser();
 //        if (firebaseUser == null) {
 //            startActivity(new Intent(this, LogIn.class));
 //            finish();
