@@ -12,4 +12,6 @@
     <string name="Price">Price</string>
     <string name="Name" />
     <string name="name">Name</string>
+    <string name="total">Total</string>
+    <string name="count">Count</string>
 </resources>

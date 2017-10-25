@@ -52,7 +52,7 @@ public class LogIn extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
             }
-        })
+        });
     }
 
 }
