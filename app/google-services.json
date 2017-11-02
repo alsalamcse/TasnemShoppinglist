@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1098249280059",
+    "firebase_url": "https://tasnemshoppinglist.firebaseio.com",
+    "project_id": "tasnemshoppinglist",
+    "storage_bucket": "tasnemshoppinglist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098249280059:android:6c37301fb7879680",
+        "android_client_info": {
+          "package_name": "com.example.user.tasnemshoppinglist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098249280059-p1g4lf9cn0l4e28olo6b4ishajumi65b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.tasnemshoppinglist",
+            "certificate_hash": "013f43c9a5d380c46de43c04644418dbe5d2a253"
+          }
+        },
+        {
+          "client_id": "1098249280059-9m08n4dh7qojq2d7tb3frevjf4grc913.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL2srH6W5zUejMAFAGGb1tRRp0QKprhfU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098249280059-9m08n4dh7qojq2d7tb3frevjf4grc913.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

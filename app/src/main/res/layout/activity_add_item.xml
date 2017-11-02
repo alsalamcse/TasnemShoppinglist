@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/amount3"
+                android:hint="amount to bye"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -47,6 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="units"
                 android:inputType="textPersonName" />
 
             <ImageButton

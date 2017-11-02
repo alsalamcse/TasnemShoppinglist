@@ -43,7 +43,6 @@ import com.example.user.tasnemshoppinglist.R;
         imbSave=(ImageButton) view.findViewById(R.id.imbSave);
         lstvCurrent=(ListView)view.findViewById(R.id.lstvCurrent);
         String[]ar={"tasnem","haya","adham","sozan"};
-        ArrayAdapter<String>arrayAdapter=new ArrayAdapter<String>(this,)
      return view;
     }
 

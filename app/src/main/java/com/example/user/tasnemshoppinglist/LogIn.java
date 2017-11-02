@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.user.tasnemshoppinglist.mainlistfragments.MainListActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,7 +20,7 @@ public class LogIn extends AppCompatActivity {
 
     private Button btnUp;
     private Button btnIn;
-    private EditText etUsername;
+    private EditText etEmail;
     private EditText etPassword;
     private FirebaseAuth auth;
     private FirebaseUser firebaseUser;
@@ -28,10 +29,21 @@ public class LogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-        etUsername=(EditText)findViewById(R.id.etUsername);
+        etEmail=(EditText)findViewById(R.id.etEmail);
         etPassword=(EditText)findViewById(R.id.etPassword);
+        auth = FirebaseAuth.getInstance();
+        firebaseUser = auth.getCurrentUser();
+
         btnIn=(Button)findViewById(R.id.btnIn);
         btnUp=(Button)findViewById (R.id.btnUp);
+       btnIn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent1 = new Intent(LogIn.this, MainListActivity.class);
+               startActivity(intent1);
+               finish();
+           }
+       });
         btnUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,18 +54,44 @@ public class LogIn extends AppCompatActivity {
 
             }
         });
-        auth = FirebaseAuth.getInstance();
-        firebaseUser = auth.getCurrentUser();
 
     }
-    private void signIn(String email,String passw){
-        auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(LogIn.this, new OnCompleteListener<AuthResult>() {
+    private void dataHandler() {
+        String stEmail = etEmail.getText().toString();
+        String stPassword = etPassword.getText().toString();
+    }
+
+    private void signIn(String email,String passw) {
+        auth.signInWithEmailAndPassword(email, passw).addOnCompleteListener(LogIn.this,
+                new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LogIn.this, "signIn Successful", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(LogIn.this,MainListActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                } else {
+                    Toast.makeText(LogIn.this, "signIn failed" + task.getException().getMessage(),
+                            Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
+                }
 
             }
         });
+
+
+
+
+
+        }
+
     }
 
-}
+
+
+
+
+
     
