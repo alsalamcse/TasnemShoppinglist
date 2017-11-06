@@ -82,9 +82,6 @@ public class LogIn extends AppCompatActivity {
         });
 
 
-
-
-
         }
 
     }
