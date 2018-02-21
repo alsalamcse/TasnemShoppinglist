@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LogIn extends AppCompatActivity {
+    public class LogIn extends AppCompatActivity {
 
     private Button btnUp;
     private Button btnIn;
@@ -39,9 +39,7 @@ public class LogIn extends AppCompatActivity {
        btnIn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent intent1 = new Intent(LogIn.this, MainListActivity.class);
-               startActivity(intent1);
-               finish();
+               dataHandler();
            }
        });
         btnUp.setOnClickListener(new View.OnClickListener() {
@@ -59,13 +57,15 @@ public class LogIn extends AppCompatActivity {
     private void dataHandler() {
         String stEmail = etEmail.getText().toString();
         String stPassword = etPassword.getText().toString();
+        signIn(stEmail,stPassword);
     }
 
     private void signIn(String email,String passw) {
         auth.signInWithEmailAndPassword(email, passw).addOnCompleteListener(LogIn.this,
                 new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+            public void onComplete(@NonNull Task<AuthResult> task)
+            {
                 if (task.isSuccessful()) {
                     Toast.makeText(LogIn.this, "signIn Successful", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(LogIn.this,MainListActivity.class);
@@ -83,8 +83,8 @@ public class LogIn extends AppCompatActivity {
 
 
         }
-
     }
+
 
 
 

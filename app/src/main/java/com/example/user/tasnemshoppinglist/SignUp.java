@@ -48,16 +48,16 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         auth = FirebaseAuth.getInstance();
         firebaseUser = auth.getCurrentUser();
-//        if (firebaseUser == null) {
-//            startActivity(new Intent(this, LogIn.class));
-//            finish();
-//            return;
-//        } else {
-//            String edUsername = firebaseUser.getDisplayName();
-//            if (firebaseUser.getPhotoUrl() != null) {
-//                String photoUrl = firebaseUser.getPhotoUrl().toString();
-//            }
-//        }
+       if (firebaseUser == null) {
+            startActivity(new Intent(this, LogIn.class));
+           finish();
+           return;
+       } else {
+            String edUsername = firebaseUser.getDisplayName();
+            if (firebaseUser.getPhotoUrl() != null) {
+                String photoUrl = firebaseUser.getPhotoUrl().toString();
+           }
+        }
 
     }
 
@@ -87,8 +87,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
             dataHandler();
-
-
 
 
         }

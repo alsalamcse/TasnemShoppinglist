@@ -34,6 +34,8 @@ public class MainListActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private CurrentFragment currentFragment;
+    private HistoryFragment historyFragment;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -62,8 +64,7 @@ public class MainListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getBaseContext(), AddItemActivity.class);
-                startActivity(i);
+                startActivity(new Intent(MainListActivity.this, AddItemActivity.class));
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -143,24 +144,37 @@ public class MainListActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+            if (position==0){
+                if(currentFragment==null){
+                    currentFragment=new CurrentFragment();
+                    return currentFragment;
+
+                }
+            }
+
+            if (position==1){
+                if (historyFragment==null){
+                    historyFragment=new HistoryFragment();
+                    return historyFragment;
+                }
+            }
             return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 2 total pages.
+            return 2 ;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "CURRENT LIST";
                 case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
+                    return "HISTORY";
+
             }
             return null;
         }
